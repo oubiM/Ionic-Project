@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ionic-app-project-c141a": {
+      "hosting": {
+        "app": [
+          "ionic-app-project-c141a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ionic-app-project-c141a"
+  }
+}
