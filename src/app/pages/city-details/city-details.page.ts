@@ -4,6 +4,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import City from 'src/app/model/city';
 import { DataService } from 'src/app/services/data.service';
 import { map } from 'rxjs/operators';
+import { UpdateCityPage } from '../update-city/update-city.page';
 
 @Component({
   selector: 'app-city-details',
@@ -33,7 +34,14 @@ export class CityDetailsPage implements OnInit {
     });
   }
 
-  updatedCity () {
+  async updatedCity () {
+    const modal = await this.updateModel.create({
+      component: UpdateCityPage,
+      componentProps: {city: this.loadedCity},
+      breakpoints: [0, 0.5, 0.75],
+      initialBreakpoint: 0.5
+    });
+    modal.present();
   }
 
   deleteCity() {
