@@ -1,20 +1,38 @@
-<ion-header [translucent]="true">
+
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="end" routerLink="../add-city">
+      <ion-button >
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start" routerLink="../login">
+      <ion-button class="logout" >
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div *ngFor="let city of cities; let index = index" (click)="cityDetail(index)">
+    <ion-slides pager="true" [options]="options" (click)="cityDetail(index)">
+      <ion-slide *ngFor="let img of city.image">
+        <ion-card >
+          <ion-card-content>
+            <img [src]="img" />
+            <ion-card-title (click)="cityDetail(index)">
+              {{ city.name }}
+            </ion-card-title> 
+            <ion-card-subtitle (click)="cityDetail(index)">
+              {{ city.country }}               
+            </ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>
+        <img src="img"/>
+      </ion-slide>
+    </ion-slides>
   </div>
 </ion-content>
