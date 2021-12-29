@@ -24,3 +24,38 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.alertBox .alert-wrapper{
+    border-radius: 8px;
+    .alert-head {
+        background: #fcfcfc;
+        margin-bottom: 5px;
+        h2 {
+            color: tomato;
+            font-weight: bold;
+        }
+    }
+
+    .alert-button-group {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        button {
+            border: 1px solid tomato;
+            color: tomato;
+            width: 45%;
+            border-radius: 6px;
+            &:last-child {
+                background: tomato;
+                color: #fff;
+                border: 1px solid tomato;
+            }
+            span {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Update</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-app>
+  <ion-content>
+    <div class="form">
+      <ion-item >
+        <ion-input placeholder="Name" [(ngModel)]="city.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="country" [(ngModel)]="city.country"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Coordinates" [(ngModel)]="city.coordinates"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Known Places" [(ngModel)]="city.places"></ion-input>
+      </ion-item>
+      <ion-item id="history">
+        <ion-textarea placeholder="History" rows="2" [(ngModel)]="city.history"></ion-textarea>
+      </ion-item>
+      <ion-button expand="block" color="success" (click)="updateCity()">
+        <ion-icon name="save" slot="start"></ion-icon>Update
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="deleteCity()">
+        <ion-icon name="trash" slot="start"></ion-icon>Delete
+      </ion-button>
+    </div>
+  </ion-content>
+</ion-app>

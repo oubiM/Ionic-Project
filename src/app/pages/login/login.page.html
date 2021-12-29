@@ -1,0 +1,30 @@
+<ion-content>
+
+  <div>
+     <div>
+       <div class="shape"><img src="../../assets/top-right.png" /></div>
+
+       <ion-card>
+         <ion-card-header>
+           <ion-card-title>
+            Login
+           </ion-card-title>
+         </ion-card-header>
+         <ion-card-content>
+            <ion-item>
+             <ion-input placeholder="Email Adress" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+
+            <div class="bottom-section">
+              <ion-button  (click)="login()">Sign In</ion-button>
+              <span> Don't have an account ? <a routerLink="../register"> Sign Up</a></span>
+            </div>
+         </ion-card-content>
+       </ion-card>
+     </div>
+  </div>
+
+</ion-content>
