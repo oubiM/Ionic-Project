@@ -1,14 +1,30 @@
-ion-toolbar {
-    ion-icon, ion-back-button {
-        font-size: 25px;
-        color: #50adc9;
+ion-header{
+    // margin-bottom: 4px;
+    ion-toolbar {
+        --background: transparent;
+        --border-color: transparent;
+        --ion-color-base: transparent !important;
+        --border-width: 0 !important;
+        ion-icon {
+            font-size: 2rem;
+            color: #50adc9;
+        }
+        &.toolbar-container {
+            --padding: 0;
+        }
+        img {
+            border: 1px solid #50adc9;
+        }
     }
 }
+
+
 ion-content {
-
+    
     --background: #f5f5f3;
-
+    
     h1 {
+        padding-top: 100px;
         text-align: center;
         font-weight: 700;
         font-size: 30px;

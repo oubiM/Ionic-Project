@@ -3,15 +3,24 @@ ion-content{
   --background:#f5f5f3 !important; 
 }
 
-ion-toolbar {
-  --background:#f5f5f3 !important; 
-  ion-icon {
-    font-size: 25px;
-    padding-right: 4px;
-    color: #6fbad1;
-  }
-  .logout {
-    padding-left: 4px;
+
+ion-header{
+  background:#f5f5f3 !important; 
+  ion-toolbar {
+    --background:#f5f5f3 !important; 
+    --border-color: transparent;
+      --ion-color-base: transparent !important;
+      --border-width: 0 !important;
+      ion-icon {
+          font-size: 2rem;
+          color: #50adc9;
+      }
+      &.toolbar-container {
+          --padding: 0;
+      }
+      img {
+          border: 1px solid #50adc9;
+      }
   }
 }
 

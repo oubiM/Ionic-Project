@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  fullname: string;
   email: string;
   password: string;
   confirmePassword: string;
@@ -28,6 +29,7 @@ export class RegisterPage implements OnInit {
 
     const res = await this.auth.createUserWithEmailAndPassword(this.email, this.password).then(res => {
       this.cnx.object('users/' + res.user.uid).set({
+        fullname: this.fullname,
         email: this.email,
         password: this.password
       }).then(() => {this.router.navigate(['../home'])}); 

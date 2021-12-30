@@ -14,7 +14,7 @@
         </ion-card-header>
         <ion-card-content>
           <ion-item>
-            <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+            <ion-input placeholder="Fullname" [(ngModel)]="fullname"></ion-input>
           </ion-item>
           <ion-item>
             <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
@@ -27,7 +27,7 @@
           </ion-item>
   
           <div class="bottom-section">
-            <ion-button (click)="register()" [disabled]="!username || !email || !password || !confirmePassword">Register</ion-button>
+            <ion-button (click)="register()" [disabled]="!fullname || !email || !password || !confirmePassword">Register</ion-button>
             <span> Already have an account ? <a routerLink="../"> Login</a></span>
           </div>
         </ion-card-content>
