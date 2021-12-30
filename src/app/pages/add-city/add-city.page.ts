@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import City from 'src/app/model/city';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/city/data.service';
 
 @Component({
   selector: 'app-add-city',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
 import City from 'src/app/model/city';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/city/data.service';
 import { map } from 'rxjs/operators';
 import { UpdateCityPage } from '../update-city/update-city.page';
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { DataService } from '../services/data.service';
+import { DataService } from '../services/city/data.service';
 import { map } from 'rxjs/operators';
 import { AddCityPage } from '../pages/add-city/add-city.page';
 

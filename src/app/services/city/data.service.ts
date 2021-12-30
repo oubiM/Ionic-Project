@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { collectionData, Firestore, collection, doc, docData, addDoc, deleteDoc, updateDoc} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import City from '../model/city';
+import City from '../../model/city';
 
 @Injectable({
   providedIn: 'root'

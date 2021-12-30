@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
 import City from 'src/app/model/city';
-import { DataService } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/city/data.service';
 
 @Component({
   selector: 'app-update-city',
