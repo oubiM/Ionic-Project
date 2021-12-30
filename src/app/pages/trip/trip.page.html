@@ -1,0 +1,30 @@
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-avatar slot="start" routerLink="/login">
+      <img height="30px" width="30px" alt="" src="assets\andre-benz-axQXVkrUASg-unsplash.jpg" />
+    </ion-avatar>
+      <ion-icon name="sync-outline" slot="end" (click)="refresh()"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h1 class="title">Trips</h1>
+	<div class="container">
+		<label class="flex-box" *ngFor="let city of cities">
+			<input type="checkbox" />
+			<div class="flip-card">
+				<div class="front">
+					<img [src]="city.image[0]" alt="" />
+					<h2>{{ city.name }}</h2>
+					<b>{{ city.country }}</b>
+					<b>{{ city.coordinates }}</b>
+				</div>
+				<div class="back">
+					<h1>About me</h1>
+					<hr />
+					<p>Lorem of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since forever.</p>
+					<hr />
+				</div>
+			</div>
+		</label>
+	</div>
+</ion-content>

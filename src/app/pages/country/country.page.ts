@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class CountryPage implements OnInit {
   private search = '';
-  private resault = '';
+  private result = '';
   private countries = [];
 
   constructor(private data: DataCountryService,
@@ -37,7 +37,7 @@ export class CountryPage implements OnInit {
   onEmptySearchValue() {
     if("" == this.search) {
       this.countryList();
-      this.resault = '';
+      this.result = '';
     }
   }
 
@@ -56,7 +56,7 @@ export class CountryPage implements OnInit {
           return res;
       })
     });
-    this.resault = "Searched Resault";
+    this.result = "Searched Result";
   }
 
   citiesOfCountry(name) {
@@ -66,7 +66,7 @@ export class CountryPage implements OnInit {
 
   refresh() {
     this.search = '';
-    this.resault = '';
+    this.result = '';
   }
   
 }

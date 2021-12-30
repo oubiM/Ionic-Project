@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule, ViewChild, ViewChildren } from '@angular/core';
+import { ChildrenOutletContexts, PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'city',
+    redirectTo: 'country',
     pathMatch: 'full'
   },
   {
@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/country/country.module').then( m => m.CountryPageModule)
   },
   {
-    path: 'trip',
+    path: 'trips',
     loadChildren: () => import('./pages/trip/trip.module').then( m => m.TripPageModule)
   },
 ];
