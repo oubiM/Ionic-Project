@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'update-city',
     loadChildren: () => import('./pages/update-city/update-city.module').then( m => m.UpdateCityPageModule)
   },
+  {
+    path: 'country',
+    loadChildren: () => import('./pages/country/country.module').then( m => m.CountryPageModule)
+  },
 ];
 
 @NgModule({
