@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'country',
+    redirectTo: 'city',
     pathMatch: 'full'
   },
   {
@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'country',
     loadChildren: () => import('./pages/country/country.module').then( m => m.CountryPageModule)
+  },
+  {
+    path: 'trip',
+    loadChildren: () => import('./pages/trip/trip.module').then( m => m.TripPageModule)
   },
 ];
 

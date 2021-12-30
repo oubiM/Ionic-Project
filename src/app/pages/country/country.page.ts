@@ -17,7 +17,7 @@ export class CountryPage implements OnInit {
     private router: Router
   ) {
     this.countryList();
-   }
+  }
 
   ngOnInit() {
   }
@@ -64,4 +64,9 @@ export class CountryPage implements OnInit {
     this.router.navigate(['/city']);
   }
 
+  refresh() {
+    this.search = '';
+    this.resault = '';
+  }
+  
 }

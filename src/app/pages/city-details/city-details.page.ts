@@ -13,13 +13,14 @@ import { UpdateCityPage } from '../update-city/update-city.page';
 })
 export class CityDetailsPage implements OnInit {
   private loadedCity: City;
+  private selectedSegment: string = "detailCity";
 
   constructor(private router: Router,
     private data: DataService,
     private activedRoute: ActivatedRoute,
     private alert: AlertController,
     private updateModel: ModalController 
-    ) {}
+  ) {}
 
   ngOnInit() {
     let id = this.activedRoute.snapshot.paramMap.get('cityId');
@@ -63,6 +64,11 @@ export class CityDetailsPage implements OnInit {
     .then(alert => {
       alert.present();
     });
+  }
+
+  segmentChanged(event) {
+    this.selectedSegment = event.target.value;
+    console.log(this.selectedSegment);
   }
 
 }

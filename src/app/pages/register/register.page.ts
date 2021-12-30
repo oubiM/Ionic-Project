@@ -26,7 +26,7 @@ export class RegisterPage implements OnInit {
     if(this.password !== this.confirmePassword) {
       return console.error("password don't match");
     }
-
+    
     const res = await this.auth.createUserWithEmailAndPassword(this.email, this.password).then(res => {
       this.cnx.object('users/' + res.user.uid).set({
         fullname: this.fullname,

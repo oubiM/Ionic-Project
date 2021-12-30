@@ -20,24 +20,11 @@
   }
 }
 
-.description {
-  h5 {
-      color: #2a2a2a;
-      padding-top: 10px;
-  }
 
-  p {
-      color: #656565;
-  }
-}
-
-.seperator {
-  hr {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      background: #e2e2e2;
-  }
+.item-name {
+  margin-top: 2px;
+  font-weight: bold;
+  color: rgb(36, 106, 197);
 }
 
 .price {
@@ -50,68 +37,94 @@
       margin-left: 20px;
       font-size: medium;
       vertical-align: top;
+    }
   }
-}
-
-.item-name {
-  margin-top: 2px;
-  font-weight: bold;
-  color: rgb(36, 106, 197);
-}
-
-ion-content {
-  --padding-top: 16px;
-  --padding-bottom: 16px;
-  --padding-start: 26px;
-  --padding-end: 26px;
-  --background: #f5f5f3;
-}
-
-ion-toolbar {
-  box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
-  --background: #f5f5f3;
-  ion-back-button {
-    color: #6fbad1;
+  
+  ion-toolbar {
+    box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
+    --background: #f5f5f3;
+    ion-back-button {
+      color: #6fbad1;
+    }
+    .edit {
+      font-size: 25px;
+      color: rgb(71, 255, 95);
+    }
+    .delete {
+      font-size: 25px;
+      padding-right: 4px;
+      color: tomato;
+    }
+    .logout {
+      padding-left: 4px;
+    }
   }
-  .edit {
-    font-size: 25px;
-    color: rgb(71, 255, 95);
-  }
-  .delete {
-    font-size: 25px;
-    padding-right: 4px;
-    color: tomato;
-  }
-  .logout {
-    padding-left: 4px;
-  }
-}
 
-.review {
-  margin-top: 16px;
-  color: #2a2a2a;
-
-  .count {
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      color: var(--ion-color-primary);
+  ion-content {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    --padding-start: 26px;
+    --padding-end: 26px;
+    --background: #f5f5f3;
   }
-}
 
-ion-list {
+.overview {
   padding: 0;
-  margin-top: 30px;
-  ion-item {
-    --background: #f5f5f3; 
+  margin-top: 20px;
+  .seperator {
+    hr {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: #e2e2e2;
+    }
   }
-  h5 {
-    margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #2a2a2a;
-    background: #f5f5f3;
+
+  .review {
+    ion-row{
+      color: #2a2a2a;
+    
+      .count {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: var(--ion-color-primary);
+      }
+    }
   }
+  
+  .description {
+    h5 {
+        color: #2a2a2a;
+        padding-top: 10px;
+    }
+  
+    p {
+        color: #656565;
+    }
+  }
+  
+  
+  ion-list {
+    padding: 0;
+    margin-top: 30px;
+    ion-item {
+      --background: #f5f5f3; 
+    }
+    h5 {
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #2a2a2a;
+      background: #f5f5f3;
+    }
+  }
+}
+
+.trip {
+  background: #6fbad1;
+  padding: 0;
+  margin-top: 20px;
 }
 
