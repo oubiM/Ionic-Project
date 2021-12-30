@@ -6,11 +6,11 @@ import { map } from 'rxjs/operators';
 import { AddCityPage } from '../pages/add-city/add-city.page';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-city',
+  templateUrl: 'city.page.html',
+  styleUrls: ['city.page.scss'],
 })
-export class HomePage {
+export class CityPage {
   private cities = [];
 
   constructor(private data: DataService,

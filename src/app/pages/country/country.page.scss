@@ -1,0 +1,143 @@
+ion-header{
+    // margin-bottom: 4px;
+    ion-toolbar {
+        --background: transparent;
+        --border-color: transparent;
+        --ion-color-base: transparent !important;
+        --border-width: 0 !important;
+        ion-icon {
+            font-size: 2rem;
+            color: #50adc9;
+        }
+        &.toolbar-container {
+            --padding: 0;
+        }
+        img {
+            border: 1px solid #50adc9;
+        }
+    }
+}
+
+.heading {
+    margin: 0;
+    padding: 0 23px 23px 23px;
+    font-weight: bold;
+    h1 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+}
+
+.search {
+    padding: 23px;
+    padding-top: 0;
+    position: relative;
+    ion-input {
+        border-radius: 23px;
+        height: 59px;
+        background: #eeeeee;
+        --padding-start: 30px;
+    }
+    ion-icon {
+        position: absolute;
+        top: 7px;
+        right: 31px;
+        z-index: 2;
+        background: #50adc9;
+        color: #fff;
+        padding: 15px;
+        font-size: 1rem;
+        border-radius: 17px;
+    }
+}
+
+.tabs {
+    padding: 23px;
+    display: flex;
+    justify-content: space-between;
+    .tab-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 25px;
+        background-color: #e2f8ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ion-icon {
+            color: #50adc9;
+            font-size: 1.6rem;
+        }
+        .sear {
+            transform: rotate(270deg);
+        }
+    }
+    .tab-icon.active {
+        background: #50adc9;
+        ion-icon {
+            color: #ffffff;
+        }
+    }
+}
+
+.category {
+    display: flex;
+    padding: 26px;
+    justify-content: space-between;
+    font-family: sans-serif;
+    font-weight: 600;
+    opacity: 0.8;
+    .cat.active {
+        color: #50adc9;
+        div {
+            width: 0;
+            margin: 0 auto; 
+            padding: 3px;
+            background: #50adc9;
+            border-radius: 50%;
+            margin-top: 9px;
+        }
+    }
+}
+
+.countries {
+    padding: 0 0 20px 23px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    .card {
+        position: relative;
+        display: inline-block;
+        width: 191px;
+        color: #000000;
+        padding-left: 13px;
+        border-radius: 29px;
+        margin-right: 10px;
+        min-height: 291px;
+        max-height: 291px;
+        background-size: cover;
+        .info {
+            position: absolute;
+            color: #ffffff;
+            bottom: 0;
+            margin-bottom: 35px;
+            padding-left: 8px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 11px;
+            font-weight: bolder;
+        }
+        p {
+            display: flex;
+            color: #50adc9;
+            font-size: 0.9rem;
+            ion-icon {
+                font-size: 0.9rem;
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+
