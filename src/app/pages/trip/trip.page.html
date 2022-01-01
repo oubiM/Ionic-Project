@@ -14,14 +14,15 @@
 			<div class="flip-card">
 				<div class="front">
 					<img [src]="trip.image" alt="" />
-					<h2>From {{trip.from}}</h2>
-					<h2>To {{trip.to}}</h2>
-					<h2> ${{trip.price}}</h2>
+					<h2 style="font-size: 18px; font-weight: bold; color: #6296e4;">From {{trip.from}}</h2>
+					<h2 style="font-size: 16px; font-weight: bold;">To {{trip.to}}</h2>
+					<h2 style="font-size: 16px;">Duration {{ trip.days }} days</h2>
+					<h2 style="font-size: 16px;"> ${{trip.price}}</h2>
 				</div>
 				<div class="back">
 					<h1>Schudle</h1>
 					<hr />
-					<p>From oujda to ifran<br> round-trip <b>8 day</b> dummy text ever since forever text ever since forever dummy text ever since forever.</p>
+					<p>Trip will start from {{trip.from}} on <b>{{ trip.start}}</b> at 9am and will continue for {{trip.days}} days until <b>{{ trip.end }}</b> All landmarks on the schedule are famous</p>
 					<button routerLink="/city">Reserve</button>
 					<hr />
 				</div>

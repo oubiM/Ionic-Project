@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class TripPage  {
   trips;
-
+  
   constructor(private data: DataTripService) {
     console.log(data.tripTrans);
     if(this.data.tripTrans == '') {

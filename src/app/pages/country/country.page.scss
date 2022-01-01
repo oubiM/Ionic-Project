@@ -60,7 +60,7 @@ ion-header{
         width: 70px;
         height: 70px;
         border-radius: 25px;
-        background-color: #e2f8ff;
+        background-color: #c6f0fd;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -70,12 +70,6 @@ ion-header{
         }
         .sear {
             transform: rotate(270deg);
-        }
-    }
-    .tab-icon.active {
-        background: #50adc9;
-        ion-icon {
-            color: #ffffff;
         }
     }
 }

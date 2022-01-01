@@ -36,4 +36,4 @@ npm-debug.log*
 .runtimeconfig.json
 
 .angular/*
-.fillbase/*
+fillbase/*
