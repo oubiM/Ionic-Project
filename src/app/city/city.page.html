@@ -1,6 +1,6 @@
 <ion-header class="ion-padding">
   <ion-toolbar>
-    <ion-avatar slot="start" routerLink="/register">
+    <ion-avatar slot="start" routerLink="../">
       <img height="30px" width="30px" alt="" src="assets\andre-benz-axQXVkrUASg-unsplash.jpg" />
     </ion-avatar>
       <ion-icon name="add-outline" slot="end" routerLink="../add-city"></ion-icon>
@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content>
+  <div class="search">
+    <ion-input placeholder="Search" (ionChange)="onSearchValue()" [(ngModel)]="search"></ion-input>
+  </div>
   <div *ngFor="let city of cities; let index = index" (click)="cityDetail(index)">
     <ion-slides pager="true" [options]="options" (click)="cityDetail(index)">
       <ion-slide *ngFor="let img of city.image">

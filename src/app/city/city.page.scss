@@ -38,7 +38,7 @@ ion-card-content {
     margin-bottom: 12px;
     float: left;
     width:  320px;
-    height: 390px;
+    height: 400px;
     background-size: cover;
   }
 }
@@ -68,4 +68,25 @@ ion-item{
   width: 60px !important;
 }
 
-
+.search {
+  padding: 23px;
+  padding-bottom: 10px;
+  padding-top: 0;
+  ion-input {
+      border-radius: 23px;
+      height: 59px;
+      background: #eeeeee;
+      --padding-start: 30px;
+  }
+  ion-icon {
+      position: absolute;
+      top: 7px;
+      right: 31px;
+      z-index: 2;
+      background: #50adc9;
+      color: #fff;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 17px;
+  }
+}

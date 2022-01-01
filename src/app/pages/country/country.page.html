@@ -13,16 +13,16 @@
     <h1>you want to go?</h1>
   </div>
   <div class="search">
-    <ion-input placeholder="Search" (ionChange)="onEmptySearchValue()" [(ngModel)]="search"></ion-input>
-    <ion-icon name="search-outline" (click)="searchCountry()"></ion-icon>
+    <ion-input placeholder="Search" (ionChange)="onSearchValue()" [(ngModel)]="search"></ion-input>
+    <ion-icon name="search-outline"></ion-icon>
   </div>
   <div class="tabs">
     <div class="tab-icon active">
-      <ion-icon name="airplane-outline" class="sear"></ion-icon>
+      <ion-icon name="airplane-outline" class="sear" (click)="trip('flight')"></ion-icon>
     </div>
-    <div class="tab-icon"><ion-icon name="boat-outline"></ion-icon></div>
-    <div class="tab-icon"><ion-icon name="bus-outline"></ion-icon></div>
-    <div class="tab-icon"><ion-icon name="calendar-number-outline"></ion-icon></div>
+    <div class="tab-icon" (click)="trip('boat')"><ion-icon name="boat-outline"></ion-icon></div>
+    <div class="tab-icon"(click)="trip('bus')"><ion-icon name="bus-outline"></ion-icon></div>
+    <div class="tab-icon" (click)="trip('')"><ion-icon name="calendar-number-outline"></ion-icon></div>
   </div>
   <div class="category" *ngIf="result == ''">
     <div class="cat">

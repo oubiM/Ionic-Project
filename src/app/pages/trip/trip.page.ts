@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/city/data.service';
+import { DataTripService } from 'src/app/services/trip/data-trip.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-trip',
@@ -7,12 +8,64 @@ import { DataService } from 'src/app/services/city/data.service';
   styleUrls: ['./trip.page.scss'],
 })
 export class TripPage  {
-  cities = [];
+  trips;
 
-  constructor(private data: DataService) {
-    this.data.getCities().subscribe(res => {
-      this.cities = res;
-    })
+  constructor(private data: DataTripService) {
+    console.log(data.tripTrans);
+    if(this.data.tripTrans == '') {
+      this.data.getAllTrips().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        this.trips = data;
+      });
+    } else {
+      this.loadTrip();
+    }
+  }
+
+  loadTrip() {
+    if(this.data.tripTrans == 'bus')
+    {
+      this.data.getAllTrips().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        this.trips = data.filter(res => {
+          return res.transport == this.data.tripTrans;
+        });
+      });
+    } else if(this.data.tripTrans == 'boat') {
+      this.data.getAllTrips().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        this.trips = data.filter(res => {
+          return res.transport == this.data.tripTrans;
+        });
+      });
+    } else if(this.data.tripTrans == 'flight') {
+      this.data.getAllTrips().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        this.trips = data.filter(res => {
+          return res.transport == this.data.tripTrans;
+        });
+      });
+    }
   }
 
 }
