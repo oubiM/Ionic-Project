@@ -60,8 +60,8 @@ export class CityPage {
     modal.present();
   }
 
-  cityDetail(id) {
-    this.router.navigate([`city-details/${id}`]);
+  cityDetail(name) {
+    this.router.navigate([`city-details/${name}`]);
   }
 
   onSearchValue() {

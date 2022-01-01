@@ -1,13 +1,20 @@
 <ion-header class="ion-padding">
   <ion-toolbar>
-    <ion-avatar slot="start" routerLink="/">
+    <ion-avatar slot="start" routerLink="/" (click)="refresh()">
       <img height="30px" width="30px" alt="" src="assets\andre-benz-axQXVkrUASg-unsplash.jpg" />
     </ion-avatar>
-      <ion-icon name="sync-outline" slot="end" (click)="refresh()"></ion-icon>
+      <ion-icon name="sync-outline" slot="end" (click)="loadTrip()"></ion-icon>
     </ion-toolbar>
 </ion-header>
 <ion-content>
   <h1 class="title">Trips</h1>
+  <div>
+	<h1 style="font-size: 16px; margin-bottom: 0; color: #6296e4;">Start</h1>
+    <ion-input type="date" value="2022-01-01" min="2022-01-01" max="2022-02-28" [(ngModel)]="dateStart"></ion-input>
+	<h1 style="font-size: 16px; margin-bottom: 0; color: #6296e4;">End</h1>
+    <ion-input type="date" value="2022-01-01" min="2022-01-01" max="2022-02-28" [(ngModel)]="dateEnd"></ion-input>
+	<ion-icon name="search-outline" (click)=searchWithDate()></ion-icon>
+  </div>
 	<div class="container">
 		<label class="flex-box" *ngFor="let trip of trips">
 			<input type="checkbox" />
@@ -22,7 +29,7 @@
 				<div class="back">
 					<h1>Schudle</h1>
 					<hr />
-					<p>Trip will start from {{trip.from}} on <b>{{ trip.start}}</b> at 9am and will continue for {{trip.days}} days until <b>{{ trip.end }}</b> All landmarks on the schedule are famous</p>
+					<p>Trip will start from {{trip.from}} on <b>{{trip.start | date:'mediumDate'}}</b> at 9am and will continue for {{trip.days}} days until <b>{{trip.end | date:'mediumDate'}}</b> All landmarks on the schedule are famous</p>
 					<button routerLink="/city">Reserve</button>
 					<hr />
 				</div>

@@ -1,7 +1,7 @@
 export default class Trip {
     days: number;
-    end: string;
-    start: string;
+    end: Date;
+    start: Date;
     image: string;
     price: number;
     from: string;

@@ -23,7 +23,7 @@ export class CityDetailsPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    let id = this.activedRoute.snapshot.paramMap.get('cityId');
+    let name = this.activedRoute.snapshot.paramMap.get('cityId');
     this.data.getAllCities().snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
@@ -31,7 +31,9 @@ export class CityDetailsPage implements OnInit {
         )
       )
     ).subscribe(data => {
-      this.loadedCity = data[id];
+      this.loadedCity = data.filter(res => {
+        return res.name == name;
+      })[0];
     });
   }
 

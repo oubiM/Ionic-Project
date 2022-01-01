@@ -11,16 +11,16 @@
   <div class="search">
     <ion-input placeholder="Search" (ionChange)="onSearchValue()" [(ngModel)]="search"></ion-input>
   </div>
-  <div *ngFor="let city of cities; let index = index" (click)="cityDetail(index)">
-    <ion-slides pager="true" [options]="options" (click)="cityDetail(index)">
+  <div *ngFor="let city of cities;" (click)="cityDetail(city.name)">
+    <ion-slides pager="true" [options]="options" (click)="cityDetail(city.name)">
       <ion-slide *ngFor="let img of city.image">
         <ion-card >
           <ion-card-content>
             <img [src]="img" />
-            <ion-card-title (click)="cityDetail(index)">
+            <ion-card-title (click)="cityDetail(city.name)">
               {{ city.name }}
             </ion-card-title> 
-            <ion-card-subtitle (click)="cityDetail(index)">
+            <ion-card-subtitle (click)="cityDetail(city.name)">
               {{ city.country }}               
             </ion-card-subtitle>
           </ion-card-content>

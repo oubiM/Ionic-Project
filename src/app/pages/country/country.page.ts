@@ -70,6 +70,7 @@ export class CountryPage implements OnInit {
   refresh() {
     this.search = '';
     this.result = '';
+    this.tripTrns.tripTrans = '';
   }
   
   trip(trans) {
