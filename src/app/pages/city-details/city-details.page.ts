@@ -5,6 +5,7 @@ import City from 'src/app/model/city';
 import { DataService } from 'src/app/services/city/data.service';
 import { map } from 'rxjs/operators';
 import { UpdateCityPage } from '../update-city/update-city.page';
+import { DataTripService } from 'src/app/services/trip/data-trip.service';
 
 @Component({
   selector: 'app-city-details',
@@ -13,10 +14,12 @@ import { UpdateCityPage } from '../update-city/update-city.page';
 })
 export class CityDetailsPage implements OnInit {
   private loadedCity: City;
+  private trips;
   private selectedSegment: string = "detailCity";
 
   constructor(private router: Router,
     private data: DataService,
+    private tripData: DataTripService,
     private activedRoute: ActivatedRoute,
     private alert: AlertController,
     private updateModel: ModalController 
@@ -70,7 +73,19 @@ export class CityDetailsPage implements OnInit {
 
   segmentChanged(event) {
     this.selectedSegment = event.target.value;
-    console.log(this.selectedSegment);
+    if(event.target.value === 'reservedTrip') {
+      this.tripData.getAllTrips().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        this.trips = data.filter(res => {       
+            return res.from === this.loadedCity.name || res.to === this.loadedCity.name;
+        });
+      });
+    }
   }
 
 }

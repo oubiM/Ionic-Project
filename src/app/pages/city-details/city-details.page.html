@@ -79,7 +79,15 @@
     </div>
 
     <div class="trip" *ngIf="selectedSegment == 'reservedTrip'">
-      <p> Trip </p>
+      <ion-item *ngFor="let trip of trips">       
+        <ion-avatar slot="start">
+          <ion-img [src]="trip.image"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2>from {{trip.from}} to {{trip.to}} </h2>
+          <p>trip duration {{trip.days}} days</p>
+        </ion-label>
+      </ion-item>
     </div>
   </ion-content>
 </ion-app>

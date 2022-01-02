@@ -188,3 +188,26 @@ button {
 	font-weight: bold;
 	color: #6296e4;
 }
+
+.search {
+    padding: 15px;
+	padding-bottom: 10px;
+    position: relative;
+    ion-input {
+        border-radius: 23px;
+        height: 40px;
+        background: #eeeeee;
+        --padding-start: 30px;
+    }
+    ion-icon {
+        position: absolute;
+        top: 18px;
+        right: 31px;
+        z-index: 2;
+        background: #50adc9;
+        color: #fff;
+        padding: 9px;
+        font-size: 1rem;
+        border-radius: 17px;
+    }
+}

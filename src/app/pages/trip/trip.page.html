@@ -3,17 +3,20 @@
     <ion-avatar slot="start" routerLink="/" (click)="refresh()">
       <img height="30px" width="30px" alt="" src="assets\andre-benz-axQXVkrUASg-unsplash.jpg" />
     </ion-avatar>
-      <ion-icon name="sync-outline" slot="end" (click)="loadTrip()"></ion-icon>
+      <ion-icon name="sync-outline" slot="end" (click)="refresh()"></ion-icon>
     </ion-toolbar>
 </ion-header>
 <ion-content>
   <h1 class="title">Trips</h1>
   <div>
 	<h1 style="font-size: 16px; margin-bottom: 0; color: #6296e4;">Start</h1>
-    <ion-input type="date" value="2022-01-01" min="2022-01-01" max="2022-02-28" [(ngModel)]="dateStart"></ion-input>
+    <ion-input type="date" min="2022-01-01" max="2022-02-28" [(ngModel)]="dateStart"></ion-input>
 	<h1 style="font-size: 16px; margin-bottom: 0; color: #6296e4;">End</h1>
-    <ion-input type="date" value="2022-01-01" min="2022-01-01" max="2022-02-28" [(ngModel)]="dateEnd"></ion-input>
-	<ion-icon name="search-outline" (click)=searchWithDate()></ion-icon>
+    <ion-input type="date" min="2022-01-01" max="2022-02-28" [(ngModel)]="dateEnd"></ion-input>
+	<div class="search">
+		<ion-input placeholder="Search" [(ngModel)]="search"></ion-input>
+		<ion-icon name="search-outline" (click)=searchTrips()></ion-icon>
+	</div>
   </div>
 	<div class="container">
 		<label class="flex-box" *ngFor="let trip of trips">

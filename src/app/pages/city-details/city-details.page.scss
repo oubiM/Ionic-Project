@@ -123,8 +123,21 @@
 }
 
 .trip {
-  background: #6fbad1;
-  padding: 0;
   margin-top: 20px;
+  ion-item {
+    --background: transparent;
+  }
+  ion-avatar {
+    height:50px;
+    width: 50px;
+    padding-left: 0;
+  }
+  h2 {
+    font-size: 16.5px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 15px;
+  }
 }
 
