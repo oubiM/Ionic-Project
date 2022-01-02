@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Router } from '@angular/router';
+import { DataUserService } from 'src/app/services/user/data-user.service';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,8 @@ export class RegisterPage implements OnInit {
 
   constructor(private auth: AngularFireAuth,
      private router: Router,
-     private cnx: AngularFireDatabase) { }
+     private cnx: AngularFireDatabase,
+     private user: DataUserService) { }
 
   ngOnInit() {
   }
@@ -32,7 +34,9 @@ export class RegisterPage implements OnInit {
         fullname: this.fullname,
         email: this.email,
         password: this.password
-      }).then(() => {this.router.navigate(['../home'])}); 
+      }).then(() => { 
+        this.user.admin = this.email.split("@")[1] === 'admin.com' ? true :false;
+        this.router.navigate(['../'])}); 
     });
     console.log(res);
     

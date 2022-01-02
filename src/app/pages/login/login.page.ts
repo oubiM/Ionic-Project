@@ -26,6 +26,7 @@ export class LoginPage implements OnInit {
       const res = await this.auth.signInWithEmailAndPassword(email, password).then(res => {
         this.userId.currentUser = res.user.uid;
         this.router.navigate(['../']);
+        this.userId.admin = res.user.email.split("@")[1] === 'admin.com' ? true :false;
       });
     } catch (error) {
       console.log(error);

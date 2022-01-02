@@ -1,11 +1,11 @@
 <ion-header >
   <ion-toolbar>
-    <ion-buttons slot="end">
+    <ion-buttons *ngIf="user.admin == true" slot="end">
       <ion-button  (click)="updatedCity()">
         <ion-icon class="edit" name="create-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-buttons slot="end">
+    <ion-buttons *ngIf="user.admin == true" slot="end">
       <ion-button  (click)="deleteCity()">
         <ion-icon class="delete" name="trash"></ion-icon>
       </ion-button>

@@ -6,6 +6,7 @@ import { DataService } from 'src/app/services/city/data.service';
 import { map } from 'rxjs/operators';
 import { UpdateCityPage } from '../update-city/update-city.page';
 import { DataTripService } from 'src/app/services/trip/data-trip.service';
+import { DataUserService } from 'src/app/services/user/data-user.service';
 
 @Component({
   selector: 'app-city-details',
@@ -17,7 +18,8 @@ export class CityDetailsPage implements OnInit {
   private trips;
   private selectedSegment: string = "detailCity";
 
-  constructor(private router: Router,
+  constructor(private user: DataUserService,
+    private router: Router,
     private data: DataService,
     private tripData: DataTripService,
     private activedRoute: ActivatedRoute,

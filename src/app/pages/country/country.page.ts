@@ -15,7 +15,7 @@ export class CountryPage implements OnInit {
   private result = '';
   private countries = [];
 
-  constructor(private data: DataCountryService,
+  constructor(private user: DataUserService ,private data: DataCountryService,
     private tripTrns: DataTripService,
     private router: Router
   ) {
@@ -71,6 +71,7 @@ export class CountryPage implements OnInit {
     this.search = '';
     this.result = '';
     this.tripTrns.tripTrans = '';
+    console.log(this.user.admin)
   }
   
   trip(trans) {

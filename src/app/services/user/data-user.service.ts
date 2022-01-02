@@ -9,6 +9,7 @@ import User from 'src/app/model/user';
 export class DataUserService {
   users: AngularFireList<User> = null;
   currentUser;
+  admin = false;
 
   constructor(private db: AngularFireDatabase) { 
     this.users = db.list('/users');

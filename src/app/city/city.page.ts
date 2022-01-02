@@ -5,6 +5,7 @@ import { DataService } from '../services/city/data.service';
 import { map } from 'rxjs/operators';
 import { AddCityPage } from '../pages/add-city/add-city.page';
 import { DataCountryService } from '../services/country/data-country.service';
+import { DataUserService } from '../services/user/data-user.service';
 
 @Component({
   selector: 'app-city',
@@ -15,7 +16,8 @@ export class CityPage {
   private cities = [];
   private search = '';
 
-  constructor(private data: DataService,
+  constructor(private user: DataUserService,
+    private data: DataService,
     private country: DataCountryService,
     private router: Router,
     private addModel: ModalController
