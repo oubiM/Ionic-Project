@@ -86,4 +86,14 @@ ion-item {
     }
 }
 
+.label-file {
+    cursor: pointer;
+    color: #50adc9;
+    padding: 18px;
+    padding-left: 0;
+    opacity: 50%;
+}
 
+.input-file {
+    display: none;
+}

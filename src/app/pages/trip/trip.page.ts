@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTripService } from 'src/app/services/trip/data-trip.service';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trip',
@@ -13,12 +14,11 @@ export class TripPage  {
   private dateEnd= new Date('');
   private search = '';
 
-  constructor(private data: DataTripService) {
+  constructor(private data: DataTripService, private router: Router) {
     this.loadTrip();
   }
 
   loadTrip() {
-    console.log(this.data.tripTrans);
     if(this.data.tripTrans == '') {
       this.data.getAllTrips().snapshotChanges().pipe(
         map(changes =>
@@ -294,9 +294,13 @@ export class TripPage  {
   refresh() {
     this.dateStart = new Date('');
     this.dateEnd = new Date('');
-    //this.data.tripTrans = '';
     this.search = '';
     this.loadTrip();
+  }
+
+  back() {
+    this.data.tripTrans = '';
+    this.router.navigate(['/']);
   }
 
 }

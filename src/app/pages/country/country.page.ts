@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataCountryService } from 'src/app/services/country/data-country.service';
 import { map } from 'rxjs/operators';
 import { DataTripService } from 'src/app/services/trip/data-trip.service';
+import { DataUserService } from 'src/app/services/user/data-user.service';
 
 @Component({
   selector: 'app-country',
@@ -60,7 +61,6 @@ export class CountryPage implements OnInit {
       this.refresh();
     }
   }
-
 
   citiesOfCountry(name) {
     this.data.selectedCounrty = name;

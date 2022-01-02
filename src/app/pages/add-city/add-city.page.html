@@ -26,7 +26,8 @@
         <ion-textarea placeholder="History" rows="2" [(ngModel)]="city.history"></ion-textarea>
       </ion-item>
       <ion-item>
-        <input type="file" (change)="onFileSelected($event)"/>
+        <label for="file" class="label-file">Upload Photo</label>
+        <input id="file" class="input-file" type="file" (change)="onFileSelected($event)">
       </ion-item>
       <ion-button expand="block" shape="round" (click)="addCity()" [disabled]="!city.name || !city.country || !city.coordinates || !city.places || !city.history">Add City</ion-button>
     </div>
