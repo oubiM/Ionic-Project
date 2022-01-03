@@ -8,7 +8,7 @@ import User from 'src/app/model/user';
 })
 export class DataUserService {
   users: AngularFireList<User> = null;
-  currentUser;
+  currentUser = 'bXqADMMuXxUQKLVy6XT6ui02hmT2';
   admin = false;
 
   constructor(private db: AngularFireDatabase) { 
@@ -24,12 +24,13 @@ export class DataUserService {
   }
 
   createReservation(reservation: Reservation): any {
-    this.db.object('/reservations' + this.currentUser).set({
+    this.db.object('/reservations/'+Math.random().toString(29).substring(3)).set({
       phone: reservation.phone,
       cin: reservation.cin,
-      nbrPlace: reservation.nbrPlace,
+      nbrPlace: reservation.places,
       totalAmount: reservation.totalAmount,
-      tripId:reservation.tripId
+      tripId:reservation.tripId,
+      uid: reservation.uid
     });
   }
 

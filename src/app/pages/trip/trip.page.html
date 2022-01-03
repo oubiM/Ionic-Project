@@ -33,7 +33,7 @@
 					<h1>Schudle</h1>
 					<hr />
 					<p>Trip will start from {{trip.from}} on <b>{{trip.start | date:'mediumDate'}}</b> at 9am and will continue for {{trip.days}} days until <b>{{trip.end | date:'mediumDate'}}</b> All landmarks on the schedule are famous</p>
-					<button routerLink="/city">Reserve</button>
+					<button (click)="reserveTrip(trip.id,trip.price)">Reserve</button>
 					<hr />
 				</div>
 			</div>

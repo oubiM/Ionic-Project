@@ -303,4 +303,10 @@ export class TripPage  {
     this.router.navigate(['/']);
   }
 
+  reserveTrip(id,price) {
+    this.data.tripId=id;
+    this.data.amount=price;
+    this.router.navigate(['/reservation']);
+  }
+
 }

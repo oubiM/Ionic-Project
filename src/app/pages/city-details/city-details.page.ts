@@ -90,4 +90,10 @@ export class CityDetailsPage implements OnInit {
     }
   }
 
+  reserveTrip(id,price) {
+    this.tripData.tripId=id;
+    this.tripData.amount=price;
+    this.router.navigate(['/reservation']);
+  }
+
 }

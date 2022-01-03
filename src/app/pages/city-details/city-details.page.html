@@ -67,12 +67,12 @@
         </ion-item>
       </ion-list>
     </div>
-    <div class="trip" *ngIf="selectedSegment == 'reservedTrip'">
-      <ion-item *ngFor="let trip of trips">       
-        <ion-avatar slot="start">
-          <ion-img [src]="trip.image"></ion-img>
+    <div class="trip" *ngIf="selectedSegment == 'reservedTrip'" >
+      <ion-item *ngFor="let trip of trips" (click)="reserveTrip(trip.id,trip.price)">       
+        <ion-avatar slot="start" (click)="reserveTrip(trip.id,trip.price)">
+          <ion-img [src]="trip.image" (click)="reserveTrip(trip.id,trip.price)"></ion-img>
         </ion-avatar>
-        <ion-label>
+        <ion-label (click)="reserveTrip(trip.id,trip.price)">
           <h2>from {{trip.from}} to {{trip.to}} </h2>
           <p>trip duration {{trip.days}} days</p>
         </ion-label>

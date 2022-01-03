@@ -2,7 +2,7 @@ export default class Reservation {
     uid: string;
     phone: string;
     cin: string;
-    nbrPlace: string;
+    places: string;
     totalAmount: string;
     tripId: string;
 }

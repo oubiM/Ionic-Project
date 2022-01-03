@@ -8,7 +8,7 @@ import Trip from 'src/app/model/trips';
 export class DataTripService {
   private path = '/trips';
   tripTrans = ''; // to know which trip to upload in country page tab icons
-  tripId;// to add a reservation
+  tripId; amount;// to add a reservation
   trips: AngularFireList<Trip> = null;
 
   constructor(private db: AngularFireDatabase) {
