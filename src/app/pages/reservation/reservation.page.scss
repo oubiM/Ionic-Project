@@ -1,0 +1,128 @@
+input,
+label {
+    margin: .4rem 0;
+    border: 1px solid
+}
+
+.label-file {
+    cursor: pointer;
+    color: #00b1ca;
+    font-weight: bold;
+}
+.label-file:hover {
+    color: #25a5c4;
+}.input-file {
+    display: none;
+}
+#email{
+    border: 2px solid rgba(235, 227, 227, 0.09);
+     border-radius: 25px;
+}
+
+.btn-valider{
+    ion-button{
+        width: 100%;
+    }
+}
+
+
+.title{
+    padding-left: 35%;
+
+}
+
+.price{
+    ion-input{
+        border: 1px ;
+        width: 4%;
+       
+    }
+}
+
+
+ion-header{
+    // margin-bottom: 4px;
+    ion-toolbar {
+        background-image: url(../../assets/img/header-seven-stages-travel.png);
+        height: 100px;
+        border-radius: 4px;
+        --background: transparent;
+        --border-color: transparent;
+        --ion-color-base: transparent !important;
+        --border-width: 0 !important;
+        ion-icon {
+            font-size: 2rem;
+            color: #50adc9;
+        }
+        &.toolbar-container {
+            --padding: 0;
+        }
+        img {
+            border: 1px solid #50adc9;
+        }
+    }
+}
+
+
+ion-content {
+    
+    --background: #f5f5f3;
+    
+    h1 {
+        padding-top: 120px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+        color: #50adc9;
+        margin-bottom: 5%;
+    }
+
+    .form {
+        margin-top: 15%;
+        padding-left: 30px;
+        padding-right: 30px;
+        background: #f5f5f3;
+    }
+
+    ion-button {
+        --background: #50adc9;
+        margin-top: 5px;
+        height: 48px;
+        font-size: 18px;
+        text-transform: initial;
+        border-radius: 50px;
+        box-shadow: 1px 8px 8px 0px rgba(0, 0, 0, 0.08);
+    }
+}
+
+ion-item {
+    border-radius: 50px;
+    box-shadow: 1px 9px 8px 0px rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
+    --highlight-height: 0px;
+
+    ion-input {
+        font-size: 18px;
+        color: #50adc9;
+        --padding-top: 20px;
+        --padding-bottom: 15px;
+        --padding-start: 5px;
+    }
+
+   
+    a {
+        font-size: 17px;
+        letter-spacing: 0.5;
+        text-decoration: none;
+    }
+}
+
+
+
+.label-file {
+    cursor: pointer;
+    color: #50adc9;
+    padding: 18px;
+    padding-left: 45px;
+    opacity: 50%;
+}
