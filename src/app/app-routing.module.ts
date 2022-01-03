@@ -42,7 +42,11 @@ const routes: Routes = [
   {
     path: 'f',
     loadChildren: () => import('./fillbase/fillbase.module').then( m => m.FillbasePageModule)
+  },  {
+    path: 'reservation',
+    loadChildren: () => import('./pages/reservation/reservation.module').then( m => m.ReservationPageModule)
   },
+
 ];
 
 @NgModule({
