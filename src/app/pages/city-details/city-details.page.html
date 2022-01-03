@@ -1,7 +1,7 @@
 <ion-header >
   <ion-toolbar>
-    <ion-buttons *ngIf="user.admin == true" slot="end">
-      <ion-button  (click)="updatedCity()">
+    <ion-buttons  slot="end">
+      <ion-button *ngIf="user.admin == true" (click)="updatedCity()">
         <ion-icon class="edit" name="create-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -17,23 +17,19 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-app>
   <ion-content>
     <ion-slides pager="true" class="product-slider">
       <ion-slide *ngFor="let img of loadedCity.image">
-        <img [src]="img" />
+        <img [src]="img"/>
       </ion-slide>
     </ion-slides>
-
     <div class="ion-padding-vertical">
       <h1 class="item-name">{{ loadedCity.name }} City</h1>
-
       <h4 class="price">
         {{ loadedCity.country }}
       </h4>
     </div>
-
     <ion-segment value="detailCity" (ionChange)="segmentChanged($event)">
       <ion-segment-button value="detailCity">
         <ion-label>Overview</ion-label>
@@ -42,9 +38,7 @@
         <ion-label>Reserve Trip</ion-label>
       </ion-segment-button>
     </ion-segment>
-
     <div class="overview" *ngIf="selectedSegment == 'detailCity'">   
-  
       <div class="review">
         <ion-row>
           <ion-col size="4">
@@ -54,22 +48,18 @@
             <div class="count"> {{ loadedCity.coordinates }} </div>
           </ion-col>
         </ion-row>
-      </div>
-    
+      </div> 
       <div class="seperator"> <hr> </div>
-
       <div class="description">
         <h5>City's History</h5>
         <p> {{ loadedCity.history }} </p>
       </div>
-
       <div class="seperator"> <hr> </div>
-
       <ion-list class="listPlaces">
         <h5>Known Places</h5>
         <ion-item *ngFor="let img of loadedCity.image; let index = index">
           <ion-avatar slot="start">
-            <ion-img [src]="img"></ion-img>
+            <img [src]="img"/>
           </ion-avatar>
           <ion-item>
             <ion-label>{{ loadedCity.places[index] }}</ion-label>
@@ -77,7 +67,6 @@
         </ion-item>
       </ion-list>
     </div>
-
     <div class="trip" *ngIf="selectedSegment == 'reservedTrip'">
       <ion-item *ngFor="let trip of trips">       
         <ion-avatar slot="start">

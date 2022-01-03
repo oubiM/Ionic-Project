@@ -1,6 +1,6 @@
 <ion-header class="ion-padding">
   <ion-toolbar>
-    <ion-avatar slot="start" routerLink="/city">
+    <ion-avatar slot="start" (click)="back()">
       <img height="30px" width="30px" alt="" src="assets\andre-benz-axQXVkrUASg-unsplash.jpg" />
     </ion-avatar>
       <ion-icon name="sync-outline" slot="end" (click)="clear()"></ion-icon>
@@ -14,7 +14,10 @@
         <ion-input placeholder="Name" [(ngModel)]="city.name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input placeholder="country" [(ngModel)]="city.country"></ion-input>
+        <ion-label>Country</ion-label>
+        <ion-select interface="popover" [(ngModel)]="city.country">
+          <ion-select-option *ngFor="let country of countries" >{{ country.name }}</ion-select-option>
+        </ion-select>
       </ion-item>
       <ion-item>
         <ion-input placeholder="Coordinates" [(ngModel)]="city.coordinates"></ion-input>
@@ -27,7 +30,7 @@
       </ion-item>
       <ion-item>
         <label for="file" class="label-file">Upload Photo</label>
-        <input id="file" class="input-file" type="file" (change)="onFileSelected($event)">
+        <input id="file" class="input-file" type="file" (change)="onFileSelected($event)" accept=".jpg,.png,.jpeg">
       </ion-item>
       <ion-button expand="block" shape="round" (click)="addCity()" [disabled]="!city.name || !city.country || !city.coordinates || !city.places || !city.history">Add City</ion-button>
     </div>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
 import City from 'src/app/model/city';
@@ -11,12 +12,15 @@ import { DataService } from 'src/app/services/city/data.service';
 })
 export class UpdateCityPage implements OnInit {
   @Input() city: City;
-  
+  private imagePth = [];
+  private task: AngularFireUploadTask;
+  private ref: AngularFireStorageReference;
 
   constructor(private data: DataService,
      private model: ModalController,
      private toast: ToastController,
-     private router: Router
+     private router: Router,
+     private storage: AngularFireStorage
      ) { }
 
   ngOnInit() {

@@ -15,7 +15,8 @@ export class CountryPage implements OnInit {
   private result = '';
   private countries = [];
 
-  constructor(private user: DataUserService ,private data: DataCountryService,
+  constructor(private user: DataUserService ,
+    private data: DataCountryService,
     private tripTrns: DataTripService,
     private router: Router
   ) {

@@ -1,23 +1,52 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/compat/storage';
+import { Router } from '@angular/router';
 import City from 'src/app/model/city';
 import { DataService } from 'src/app/services/city/data.service';
+import { DataCountryService } from 'src/app/services/country/data-country.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-city',
   templateUrl: './add-city.page.html',
   styleUrls: ['./add-city.page.scss'],
 })
-export class AddCityPage implements OnInit {
-  city: City = new City();
-  imagePth = [];
+export class AddCityPage {
+  private city: City = new City();
+  private imagePth = [];
+  private task: AngularFireUploadTask;
+  private ref: AngularFireStorageReference;
+  private countries = [];
 
-  constructor(private data: DataService) { }
-
-  ngOnInit() {
+  constructor(private country: DataCountryService,
+    private data: DataService,
+    private storage: AngularFireStorage,
+    private router: Router
+  ) {
+    this.loadCountries();
   }
 
-  onFileSelected(event) {
-    this.imagePth.push('..\/..\/assets\/'+event.target.files[0]['name']);
+  loadCountries() {
+    this.country.getAllCountries().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.countries = data;
+    });
+  }
+
+  async onFileSelected(event) {
+    const path =event.target.files[0]['name'];
+    this.ref = this.storage.ref(path);
+    this.task = this.ref.put(event.target.files[0]);
+    await this.task.then(res => {
+      res.ref.getDownloadURL().then(url => {
+        this.imagePth.push(url);
+      })
+    })
     console.log(this.imagePth);
   }
 
@@ -36,5 +65,10 @@ export class AddCityPage implements OnInit {
     this.city.coordinates = "";
     this.city.history = "";
     this.city.places = [];
+  }
+
+  back() {
+    this.country.selectedCounrty = this.city.country;
+    this.router.navigate(['/city']);
   }
 }
