@@ -32,7 +32,7 @@ export class ReservationPage implements OnInit {
       )
     ).subscribe((data) => {
       this.currentUser = data.filter(res => {
-        if(res.id === 'bXqADMMuXxUQKLVy6XT6ui02hmT2'){
+        if(res.id === this.user.currentUser){
           this.currentUser.fullname = res.fullname;
           this.currentUser.email = res.email;
           return res;
@@ -107,7 +107,7 @@ export class ReservationPage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            this.router.navigate(['../'])
+            this.router.navigate(['../country'])
           }
         }
       ]

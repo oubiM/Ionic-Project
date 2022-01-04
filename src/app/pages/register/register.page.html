@@ -17,15 +17,15 @@
             <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="Password" [(ngModel)]="password"></ion-input>
+            <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="Confirme Password" [(ngModel)]="confirmePassword"></ion-input>
-          </ion-item>
-  
+            <ion-input type="password" placeholder="Confirme Password" [(ngModel)]="confirmePassword"></ion-input>
+          </ion-item> 
+          <ion-label *ngIf="dontMatch">Password don't match</ion-label>
           <div class="bottom-section">
             <ion-button (click)="register()" [disabled]="!fullname || !email || !password || !confirmePassword">Register</ion-button>
-            <span> Already have an account ? <a routerLink="../country"> Login</a></span>
+            <span> Already have an account ? <a routerLink="../"> Login</a></span>
           </div>
         </ion-card-content>
       </ion-card>

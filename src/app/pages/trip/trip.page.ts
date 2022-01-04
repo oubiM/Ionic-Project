@@ -300,7 +300,7 @@ export class TripPage  {
 
   back() {
     this.data.tripTrans = '';
-    this.router.navigate(['/']);
+    this.router.navigate(['/country']);
   }
 
   reserveTrip(id,price) {

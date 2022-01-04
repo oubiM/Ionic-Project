@@ -15,12 +15,12 @@
              <ion-input placeholder="Email Adress" [(ngModel)]="email"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input placeholder="Password" [(ngModel)]="password"></ion-input>
+              <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
             </ion-item>
 
             <div class="bottom-section">
-              <ion-button  (click)="login()">Sign In</ion-button>
-              <span> Don't have an account ? <a routerLink="../register"> Sign Up</a></span>
+              <ion-button  (click)="login()">Login</ion-button>
+              <span> Don't have an account ? <a routerLink="../register"> Register</a></span>
             </div>
          </ion-card-content>
        </ion-card>

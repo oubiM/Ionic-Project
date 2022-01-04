@@ -14,6 +14,7 @@ export class RegisterPage implements OnInit {
   email: string;
   password: string;
   confirmePassword: string;
+  dontMatch;
 
   constructor(private auth: AngularFireAuth,
      private router: Router,
@@ -26,7 +27,7 @@ export class RegisterPage implements OnInit {
   async register() {
 
     if(this.password !== this.confirmePassword) {
-      return console.error("password don't match");
+      this.dontMatch = 'password don\'t match';
     }
     
     const res = await this.auth.createUserWithEmailAndPassword(this.email, this.password).then(res => {
@@ -36,7 +37,8 @@ export class RegisterPage implements OnInit {
         password: this.password
       }).then(() => { 
         this.user.admin = this.email.split("@")[1] === 'admin.com' ? true :false;
-        this.router.navigate(['../'])}); 
+        this.user.currentUser = res.user.uid;
+        this.router.navigate(['../country'])}); 
     });
     console.log(res);
     
