@@ -6,8 +6,9 @@ ion-header{
         --ion-color-base: transparent !important;
         --border-width: 0 !important;
         ion-icon {
-            font-size: 2rem;
+            font-size: 1.7rem;
             color: #50adc9;
+            margin-left: 10px;
         }
         &.toolbar-container {
             --padding: 0;
