@@ -7,4 +7,5 @@ export default class Trip {
     from: string;
     to: string;
     transport: string;
+    id: string;
 }

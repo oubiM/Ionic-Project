@@ -57,9 +57,9 @@ export class ReservationPage implements OnInit {
 
   async addReservation() {
     this.reservation.totalAmount = (Number(this.reservation.places) * Number(this.tripId.amount)).toString();
-/*     this.reservation.tripId = this.tripId.tripId;
+    this.reservation.tripId = this.tripId.tripId;
     this.reservation.uid = this.user.currentUser;
-    this.user.createReservation(this.reservation); */
+    this.user.createReservation(this.reservation);
 
     const alert = await this.alert.create({
       cssClass: 'my-custom-class',

@@ -63,7 +63,7 @@ export class CityDetailsPage implements OnInit {
         text: 'delete',
         handler: () => {
           this.data.deletecity(this.loadedCity.id);
-          this.router.navigate(['../home']);
+          this.router.navigate(['../city']);
         }
       }
     ]

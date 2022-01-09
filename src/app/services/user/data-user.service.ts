@@ -8,30 +8,39 @@ import User from 'src/app/model/user';
 })
 export class DataUserService {
   users: AngularFireList<User> = null;
-  currentUser = 'bXqADMMuXxUQKLVy6XT6ui02hmT2';
+  reservations: AngularFireList<Reservation> = null;
+  currentUser = "bXqADMMuXxUQKLVy6XT6ui02hmT2";
   admin = false;
 
   constructor(private db: AngularFireDatabase) { 
     this.users = db.list('/users');
+    this.reservations = db.list('reservations/')
   }
 
   getAllUsers(): AngularFireList<User> {
     return this.users;
   }
 
-  updatecity(id: string, value: any): Promise<void> {
-    return this.users.update(id, value);
+  getAllReservations(): AngularFireList<Reservation> {
+    return this.reservations;
   }
 
   createReservation(reservation: Reservation): any {
     this.db.object('/reservations/'+Math.random().toString(29).substring(3)).set({
       phone: reservation.phone,
       cin: reservation.cin,
-      nbrPlace: reservation.places,
+      places: reservation.places,
       totalAmount: reservation.totalAmount,
       tripId:reservation.tripId,
       uid: reservation.uid
     });
   }
 
+  updateReservation(id: string, value: any): Promise<void> {
+    return this.reservations.update(id, value);
+  }
+
+  deleteReservation(id: string): Promise<void> {
+    return this.reservations.remove(id);
+  } 
 }

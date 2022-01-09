@@ -1,4 +1,5 @@
 export default class Reservation {
+    id: string;
     uid: string;
     phone: string;
     cin: string;

@@ -36,9 +36,9 @@ export class UpdateCityPage implements OnInit {
   }
 
   async deleteCity() {
-   await this.data.deleteCity(this.city);
+    await this.data.deleteCity(this.city);
     this.router.navigateByUrl('/home');
-   this.model.dismiss();
+    this.model.dismiss();
   }
 
 }
